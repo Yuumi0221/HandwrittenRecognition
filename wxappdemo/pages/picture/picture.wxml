@@ -1,0 +1,61 @@
+<cu-custom bgColor="bg-cyan light" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content"><text style="color:#000000">图片识别</text></view>
+</cu-custom>
+
+<view class="Container">
+    <view class="BtnRegion0">
+      <view class="sign-setting-border {{idx0==item.Item_id?'selected':''}}" 
+            wx:for="{{applyList0}}" 
+            wx:key="" 
+            bindtap='selectApply0' 
+            data-id="{{item.Item_id}}">
+        {{item.Item_Name}}
+      </view>
+    </view>
+    <view class="BtnRegion">
+      <view class="sign-setting-border {{idx2==item.Item_id?'selected':''}}" 
+            wx:for="{{applyList2}}" 
+            wx:key="" 
+            bindtap='selectApply2' 
+            data-id="{{item.Item_id}}">
+        {{item.Item_Name}}
+      </view>　　　　　
+      <view class="sign-setting-border {{idx1==item.Item_id?'selected':''}}" 
+            wx:for="{{applyList1}}" 
+            wx:key="" 
+            bindtap='selectApply1' 
+            data-id="{{item.Item_id}}">
+        {{item.Item_Name}}
+      </view>
+    </view>
+    <view class="PreviewRegion" bind:tap="uploadImg">
+        <!-- 图片预览 -->
+        <canvas class="myCanvas" 
+                canvas-id="myCanvas" 
+                bindtouchstart="touchStart" 
+                bindtouchmove="touchMove" 
+                bindtouchend="touchEnd">
+          <view wx:if="{{pic}}" class="iconAndWords">
+            <view class="cuIcon-pic"></view>
+            <text class="noticet" style="white-space:pre-wrap">点击上传图片</text>
+            <text class="noticed" style="white-space:pre-wrap">不超过500KB的JPG/PNG文件</text>
+          </view>
+        </canvas>
+    </view>
+    <view class="BtnRegion">
+        <!-- 上传、识别按钮 -->
+        <button class="cu-btn bg-cyan margin-tb-sm lg light"
+            bind:tap="clearCanvas">
+            <text style="color:#000000">清空</text></button>　　　　　
+        <button class="cu-btn bg-cyan margin-tb-sm lg shadow-blur"
+            bind:tap="recPic">识别</button>
+    </view>
+    <view class="BtnRegion">
+        <!-- 上传、识别按钮 -->
+        <button class="cu-btn bg-cyan margin-tb-sm lg shadow-blur"
+            bind:tap="clearCanvas">清空</button>　　　　　
+        <button class="cu-btn bg-cyan margin-tb-sm lg shadow-blur"
+            bind:tap="recPic">识别</button>
+    </view>
+</view>

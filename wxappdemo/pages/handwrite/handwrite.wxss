@@ -1,0 +1,114 @@
+.Container {
+  border: rgba(255, 255, 255, 0) 0px solid;
+  border-radius: 3px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 70rpx;
+  box-shadow: 0 0 0px 0px black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+}
+
+.PaintRegion {
+  height: 314px;
+  width: 314px;
+  border: rgba(0, 0, 0, 0.342) 4px solid;
+  margin: 3px auto 3px;
+  margin-top: 68rpx;
+  margin-bottom: 50rpx;
+}
+
+.BtnRegion0 {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.BtnRegion {
+  text-align: center;
+}
+
+.myCanvas {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  text-align:center;
+  margin: auto;
+  position:relative;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.cuIcon-writefill {
+  color: #b8dcdf;
+  font-size: 9vh;
+  position: absolute;
+  height: 150px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.noticet{
+  color: #535353;
+  font-size: 40rpx;
+  position: absolute;
+  height: 0;
+  top: 40rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.noticed{
+  color: #535353;
+  font-size: 30rpx;
+  position: absolute;
+  height: 0;
+  top: 135rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.checkbox {
+  display: inline-block;
+  padding: 20rpx;
+  background: #b8dcdf;
+  margin: 0rpx;
+  border-radius: 0rpx;
+  font-size: 30rpx;
+}
+ 
+.checkedActive {
+  background: #21b6c1;
+  color: #fff;
+}
+
+.sign-setting-border{
+  display: inline-block;
+  padding: 23rpx;
+  background: #b8dcdf;
+  margin: 0rpx;
+  border-radius: 0rpx;
+  font-size: 30rpx;
+}
+
+.selected{
+  background: #21b6c1;
+  color: #fff;
+}
+
+.cu-btn{
+  width: 10vh;
+}
