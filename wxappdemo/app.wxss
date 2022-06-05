@@ -1,6 +1,6 @@
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";
-@import "utils/iconfont.wxss";
+@import "utils/stylesheet.wxss";
 
 .scrollPage {
   height: 100vh;
@@ -17,7 +17,7 @@
   padding: 35rpx;
   border-radius: 12rpx;
   width: 100%;
-  margin: 0 2.5% 70rpx;
+  margin: 50rpx 2.5% 50rpx;
   background-size: cover;
   background-position: center;
   position: relative;

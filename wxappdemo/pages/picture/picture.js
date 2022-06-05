@@ -1,9 +1,11 @@
 var src = '';
+var canvasWidth = 0, canvasHeight = 0;
 Page({
     /**
      * 页面的初始数据
      */
     data: {
+        url: 'http://127.0.0.1:5000',
         applyList0:[
           {Item_id: "0", Item_Name: "CNN"},
           {Item_id: "1", Item_Name: "FCNN"},
@@ -72,7 +74,7 @@ Page({
         let a = this;
         wx.showActionSheet({
             itemList: [ "从相册中选择", "拍照" ],
-            itemColor: "#6C3D1A",
+            itemColor: "black",
             success: function(e) {
             //album:相册   //camera拍照
                 e.cancel || (0 == e.tapIndex ? a.chooseWxImageShop("album") : 1 == e.tapIndex && a.chooseWxImageShop("camera"));
@@ -90,10 +92,10 @@ Page({
         sourceType: [ a ],//类型
         count: 1,
         success: function(a) {
-          if(a.tempFiles[0].size> 2097152){
+          if(a.tempFiles[0].size> 512000){
             wx.showModal({
               title: "提示",
-              content: "选择的图片过大，请上传不超过2M的图片",
+              content: "选择的图片过大，请上传不超过500KB的图片",
               showCancel: !1,
               success: function(a) {
                   a.confirm;
@@ -110,12 +112,7 @@ Page({
                 let height = res.height //图片的高
                 ctx.width = width;
                 ctx.height = height;
-                //获取canvas宽高
-                // wx.createSelectorQuery().selectAll('.myCanvas').boundingClientRect(function (rect) {
-                //   console.log(rect[0].width)
-                //   console.log(rect[0].height)
-                // }).exec()  
-                ctx.drawImage(path, 0, 0, 306, 306);
+                ctx.drawImage(path, 0, 0, canvasWidth, canvasHeight);
                 // 再将图片填充到画布
                 let pattern = ctx.createPattern(path,'no-repeat')
                 ctx.fillStyle = pattern;
@@ -143,9 +140,8 @@ Page({
         wx.showLoading({
           title: "识别中"
         });
-        wx.request({  
-          // url: 'http://192.168.1.100:5000/v1/typeChange',
-          url: 'http://127.0.0.1:5000/v1/typeChange',
+        wx.request({
+          url: that.data.url + '/typeChange',
           data: {
             model_type: that.data.idx0,
             multi_char: that.data.idx1,
@@ -155,8 +151,7 @@ Page({
           success: function(res2){
             // 上传
             wx.uploadFile({
-              // url: 'http://192.168.1.100:5000/v1/upload',
-              url: 'http://127.0.0.1:5000/v1/upload',
+              url: that.data.url + '/upload',
               filePath: src,
               name: 'file',
               formData: null,
@@ -205,8 +200,15 @@ Page({
      * 提示文字
      */
     onLoad: function(){
+      src = '';
       this.setData({
         pic: true
+      })
+      wx.createSelectorQuery().select('#myCanvas')
+      .fields({ node: true, size: true })
+      .exec((res) => {
+        canvasWidth = res[0].width
+        canvasHeight = res[0].height
       })
     }
 })

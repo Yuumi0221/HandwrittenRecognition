@@ -5,7 +5,7 @@
 
 <view class="Container">
     <view class="BtnRegion0">
-      <view class="sign-setting-border {{idx0==item.Item_id?'selected':''}}" 
+      <view class="sign-setting-border0 {{idx0==item.Item_id?'selected':''}}" 
             wx:for="{{applyList0}}" 
             wx:key="" 
             bindtap='selectApply0' 
@@ -31,7 +31,7 @@
     </view>
     <view class="PreviewRegion" bind:tap="uploadImg">
         <!-- 图片预览 -->
-        <canvas class="myCanvas" 
+        <canvas class="myCanvas" id="myCanvas" 
                 canvas-id="myCanvas" 
                 bindtouchstart="touchStart" 
                 bindtouchmove="touchMove" 
@@ -42,14 +42,6 @@
             <text class="noticed" style="white-space:pre-wrap">不超过500KB的JPG/PNG文件</text>
           </view>
         </canvas>
-    </view>
-    <view class="BtnRegion">
-        <!-- 上传、识别按钮 -->
-        <button class="cu-btn bg-cyan margin-tb-sm lg light"
-            bind:tap="clearCanvas">
-            <text style="color:#000000">清空</text></button>　　　　　
-        <button class="cu-btn bg-cyan margin-tb-sm lg shadow-blur"
-            bind:tap="recPic">识别</button>
     </view>
     <view class="BtnRegion">
         <!-- 上传、识别按钮 -->

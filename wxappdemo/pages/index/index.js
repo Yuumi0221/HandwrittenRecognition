@@ -4,7 +4,7 @@ Component({
   },
   data: {
     elements: [{
-        title: '手写识别',
+        title: '手绘识别',
         name: 'handwrite',
         color: 'blue',
         icon: 'writefill'
@@ -15,12 +15,12 @@ Component({
         color: 'cyan',
         icon: 'upload'
       },
-      {
-        title: '历史记录',
-        name: 'history',
-        color: 'green',
-        icon: '<view class="iconfont icon-lishi"></view>'
-      }
+      // {
+      //   title: '历史记录',
+      //   name: 'history',
+      //   color: 'green',
+      //   icon: '<view class="iconfont icon-lishi"></view>'
+      // }
     ],
   }
 })

@@ -1,11 +1,11 @@
 <cu-custom bgColor="bg-blue light" isBack="{{true}}">
   <view slot="backText">返回</view>
-  <view slot="content"><text style="color:#000000">手写识别</text></view>
+  <view slot="content"><text style="color:#000000">手绘识别</text></view>
 </cu-custom>
 
 <view class="Container">
     <view class="BtnRegion0">
-      <view class="sign-setting-border {{idx0==item.Item_id?'selected':''}}" 
+      <view class="sign-setting-border0 {{idx0==item.Item_id?'selected':''}}" 
             wx:for="{{applyList0}}" 
             wx:key="" 
             bindtap='selectApply0' 
@@ -31,28 +31,22 @@
     </view>
     <view class="PaintRegion">
         <!-- 画板区域 -->
-        <canvas class="myCanvas" 
+        <canvas class="myCanvas" id="myCanvas" 
                 canvas-id="myCanvas" 
                 bindtouchstart="touchStart" 
                 bindtouchmove="touchMove" 
                 bindtouchend="touchEnd">
+          <view class="RedrawIcon">
+            <text class='cuIcon-forwardfill lg text-gray' bindtap="drawRevoke"></text>
+            <text wx:if="{{!isClear}}" class='iconfont icon-rubber-full lg text-gray' bindtap="eraser"></text>
+            <text wx:if="{{isClear}}" class='cuIcon-writefill lg text-gray' bindtap="pen"></text>
+          </view>
           <view wx:if="{{pic}}" class="iconAndWords">
-            <view class="cuIcon-writefill"></view>
+            <view class="cuIcon-write"></view>
             <text class="noticet" style="white-space:pre-wrap">请在此处手绘</text>
             <text class="noticed" style="white-space:pre-wrap">尽量居中书写</text>
           </view>
         </canvas>
-    </view>
-    <view class="BtnRegion">
-        <!-- 清空、保存、识别按钮 -->
-        <button class="cu-btn bg-blue margin-tb-sm lg light"
-            bind:tap="clearCanvas">
-            <text style="color:#000000">清空</text></button>　　
-        <button class="cu-btn bg-blue margin-tb-sm lg light"
-            bind:tap="SaveImg">
-            <text style="color:#000000">保存</text></button>　　
-        <button class="cu-btn bg-blue margin-tb-sm lg shadow-blur"
-            bind:tap="recImg">识别</button>
     </view>
     <view class="BtnRegion">
         <!-- 清空、保存、识别按钮 -->

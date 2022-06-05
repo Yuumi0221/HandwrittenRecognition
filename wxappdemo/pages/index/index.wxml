@@ -12,7 +12,7 @@
     </navigator>
   </view>
   <view class="textC">
-    <text class="C">V0.1.5 © 2022 By Yuumi & Akira</text>
+    <text class="C">V0.2.2 © 2022 By Yuumi & Akira</text>
   </view>
 </scroll-view>
 

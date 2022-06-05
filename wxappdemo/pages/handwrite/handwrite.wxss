@@ -4,7 +4,7 @@
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  margin-top: 70rpx;
+  margin-top: 100rpx;
   box-shadow: 0 0 0px 0px black;
   display: flex;
   flex-direction: column;
@@ -13,17 +13,17 @@
 }
 
 .PaintRegion {
-  height: 314px;
-  width: 314px;
-  border: rgba(0, 0, 0, 0.342) 4px solid;
-  margin: 3px auto 3px;
+  height: 610rpx;
+  width: 610rpx;
+  border: rgba(0, 0, 0, 0.342) 10rpx solid;
+  margin: 3rpx auto 3rpx;
   margin-top: 68rpx;
   margin-bottom: 50rpx;
 }
 
 .BtnRegion0 {
   text-align: center;
-  margin-bottom: 30rpx;
+  margin-bottom: 40rpx;
 }
 
 .BtnRegion {
@@ -45,11 +45,28 @@
   justify-content: center;
 }
 
-.cuIcon-writefill {
+.RedrawIcon {
+  font-size: 80rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 7rpx;
+  margin-top: 4rpx;
+}
+
+.iconfont{
+  padding: 5rpx;
+  margin: 3rpx;
+  font-size: 75rpx;
+}
+
+.cuIcon-write {
   color: #b8dcdf;
-  font-size: 9vh;
+  font-size: 120rpx;
   position: absolute;
-  height: 150px;
+  height: 240rpx;
   top: 0;
   bottom: 0;
   left: 0;
@@ -95,6 +112,16 @@
   color: #fff;
 }
 
+.sign-setting-border0{
+  display: inline-block;
+  padding: 23rpx;
+  background: #b8dcdf;
+  margin: 0rpx;
+  border-radius: 0rpx;
+  font-size: 30rpx;
+  width: 120rpx;
+}
+
 .sign-setting-border{
   display: inline-block;
   padding: 23rpx;
@@ -110,5 +137,5 @@
 }
 
 .cu-btn{
-  width: 10vh;
+  width: 165rpx;
 }
