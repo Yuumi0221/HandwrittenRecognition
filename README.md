@@ -13,7 +13,7 @@
 下载后解压可以看到文件结构：
 
 ```
-HandwrittenRecognition
+Group11 Handwritten Recognition
 ├── HandwrittenRecognition-0.2.3	// 后端代码
 |   ├── main.py		// 运行以启动后端服务器
 |   ├── model		// 五种算法各两个模型，共十个模型
@@ -48,7 +48,27 @@ HandwrittenRecognition
   git clone http://202.120.87.186:49080/MultiMediaCourse-2022-Tue/group11-handwritten-recognition.git
   ```
 
-  
+
+
+
+## 配置清单
+
+后端服务器使用 Python 编写，所需依赖环境如下：
+
+```
+opencv-python~=4.5.3.56
+numpy~=1.21.2
+halo~=0.0.31
+sklearn~=0.0
+scikit-learn~=0.23.2
+keras~=2.8.0
+matplotlib~=3.4.3
+uvicorn~=0.17.6
+pillow~=8.0.1
+fastapi~=0.76.0
+```
+
+
 
 ## 运行
 
